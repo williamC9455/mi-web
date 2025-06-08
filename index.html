@@ -3,31 +3,123 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Formulario de Contacto</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Portafolio - Sobre mí</title>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #ddd;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    nav {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background-color: #333;
+      color: #fff;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      color: #444;
+    }
+
+    .foto {
+      max-width: 200px;
+      border-radius: 50%;
+      margin-bottom: 1.5rem;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      margin-top: auto;
+      background: #ddd;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <h1>Formulario de Contacto</h1>
+  <header>
+    <nav>
+      <a href="index.html" class="active">Sobre mí</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="habilidades.html">Habilidades</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
 
-  <form id="formulario">
-    <label for="nombre">Nombre:</label><br />
-    <input type="text" id="nombre" name="nombre" required /><br /><br />
+  <main>
+    <img src="foto-tuya.jpg" alt="Foto de William" class="foto" />
+    <h1>Sobre mí</h1>
+    <p>Hola, soy William, arquitecto apasionado por el diseño minimalista y la innovación. Me especializo en crear espacios funcionales y estéticos que combinan forma y función.</p>
+    <p>Aquí podrás conocer más sobre mis proyectos, habilidades y cómo contactarme.</p>
+  </main>
 
-    <label for="email">Email:</label><br />
-    <input type="email" id="email" name="email" required /><br /><br />
-
-    <button type="submit">Enviar</button>
-  </form>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      document.getElementById("formulario").addEventListener("submit", function (e) {
-        e.preventDefault();
-        alert("Gracias por contactar. Te responderé pronto.");
-      });
-    });
-  </script>
+  <footer>
+    © 2025 WilliamC9455 - Portafolio
+  </footer>
 
 </body>
 </html>

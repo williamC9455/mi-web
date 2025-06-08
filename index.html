@@ -2,231 +2,38 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portafolio William</title>
-  <style>
-    /* Reset y base */
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f5f5f5;
-      color: #333;
-      scroll-behavior: smooth;
-    }
-    a {
-      text-decoration: none;
-      color: #444;
-      font-weight: 600;
-    }
-    a:hover {
-      color: #000;
-    }
-
-    /* Contenedor principal */
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 1rem;
-    }
-
-    /* Header y nav */
-    header {
-      background-color: #e0e0e0;
-      padding: 1rem 0;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-    }
-    nav a {
-      font-size: 1.1rem;
-      padding: 0.3rem 0.6rem;
-      border-radius: 4px;
-      transition: background-color 0.3s ease;
-    }
-    nav a:hover {
-      background-color: #bbb;
-      color: #222;
-    }
-
-    /* Secciones */
-    section {
-      padding: 3rem 1rem;
-      background-color: white;
-      margin-top: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    /* Inicio */
-    #inicio h1 {
-      text-align: center;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      color: #222;
-    }
-
-    /* Sobre mí */
-    #sobre-mi {
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    #sobre-mi img {
-      width: 180px;
-      border-radius: 50%;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    }
-    #sobre-mi .texto {
-      flex: 1;
-      min-width: 250px;
-      font-size: 1rem;
-      line-height: 1.5;
-      color: #444;
-    }
-
-    /* Proyectos */
-    #proyectos h2 {
-      text-align: center;
-      font-weight: 700;
-      color: #222;
-      margin-bottom: 2rem;
-    }
-    .grid-proyectos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-    }
-    .proyecto {
-      position: relative;
-      overflow: hidden;
-      border-radius: 8px;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .proyecto img {
-      width: 100%;
-      height: auto;
-      display: block;
-      transition: all 0.3s ease;
-    }
-    .descripcion {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: rgba(0,0,0,0.7);
-      color: white;
-      padding: 1rem;
-      border-radius: 8px;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      max-width: 90%;
-      text-align: center;
-      font-size: 0.9rem;
-      pointer-events: none;
-    }
-    .proyecto:hover img {
-      filter: brightness(40%);
-    }
-    .proyecto:hover .descripcion {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    /* Contacto */
-    #contacto h2 {
-      text-align: center;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      color: #222;
-    }
-    #contacto p {
-      text-align: center;
-      color: #555;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 1rem;
-      margin-top: 3rem;
-      color: #888;
-      font-size: 0.9rem;
-    }
-  </style>
+  <title>Inicio - William Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<header>
-  <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#sobre-mi">Sobre mí</a>
-    <a href="#proyectos">Proyectos</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
-</header>
+  <main>
+    <section id="sobre-mi" class="inicio">
+      <img src="william foto.png" alt="Foto de William" class="foto-perfil" />
+      <h1>William C.</h1>
+      <p>
+        Graduate in Architecture, Urbanism, and Territory from Universidad San Ignacio de Loyola in Lima, Perú. With over seven years of experience in project development, technical office work, and construction supervision. Skilled in budgeting and post-sale coordination with suppliers and clients.
+      </p>
+      <p>
+        I am a proactive person with a passion for design. I have a strong ability to adapt to different environments and work under pressure.
+      </p>
+      <p>
+        My goal is to expand my experience in product design to create effective solutions.
+      </p>
+    </section>
+  </main>
 
-<div class="container">
-
-  <section id="inicio">
-    <h1>William C. - Arquitecto y Diseñador</h1>
-    <p style="text-align:center; color:#666; max-width:600px; margin:auto;">
-      Bienvenido a mi portafolio digital. Aquí puedes conocer más sobre mi experiencia y proyectos.
-    </p>
-  </section>
-
-  <section id="sobre-mi">
-    <img src="william foto.png" alt="Foto de William" />
-    <div class="texto">
-      <p><strong>Graduate in Architecture, Urbanism, and Territory</strong> from Universidad San Ignacio de Loyola in Lima, Perú. With over seven years of experience in project development, technical office work, and construction supervision. Skilled in budgeting and post-sale coordination with suppliers and clients.</p>
-      <p>I am a proactive person with a passion for design. I have a strong ability to adapt to different environments and work under pressure.</p>
-      <p>My goal is to expand my experience in product design to create effective solutions.</p>
-    </div>
-  </section>
-
-  <section id="proyectos">
-    <h2>Proyectos</h2>
-    <div class="grid-proyectos">
-      <div class="proyecto">
-        <img src="proyecto1.jpg" alt="Proyecto 1" />
-        <div class="descripcion">Proyecto 1: Diseño arquitectónico minimalista para espacio urbano.</div>
-      </div>
-      <div class="proyecto">
-        <img src="proyecto2.jpg" alt="Proyecto 2" />
-        <div class="descripcion">Proyecto 2: Remodelación de vivienda con enfoque sostenible.</div>
-      </div>
-      <div class="proyecto">
-        <img src="proyecto3.jpg" alt="Proyecto 3" />
-        <div class="descripcion">Proyecto 3: Diseño de mobiliario funcional y moderno.</div>
-      </div>
-      <div class="proyecto">
-        <img src="proyecto4.jpg" alt="Proyecto 4" />
-        <div class="descripcion">Proyecto 4: Espacios comerciales con identidad visual fuerte.</div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <p>¿Quieres trabajar conmigo o simplemente saludar? ¡Escríbeme!</p>
-    <p>Email: williamc9455@example.com</p>
-  </section>
-
-</div>
-
-<footer>
-  &copy; 2025 William C. - Todos los derechos reservados.
-</footer>
-
+  <footer>
+    <p>© 2025 William C.</p>
+  </footer>
 </body>
 </html>

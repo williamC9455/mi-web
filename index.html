@@ -12,12 +12,23 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f5f5f5;
+      background: #f5f5f5 url('fondo-arquitectura.jpg') no-repeat center center fixed;
+      background-size: cover;
       color: #333;
       line-height: 1.6;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      position: relative;
+    }
+
+    /* Capa para oscurecer y bajar opacidad del fondo */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(245, 245, 245, 0.85);
+      z-index: -1;
     }
 
     header {
@@ -64,12 +75,14 @@
     h1 {
       margin-bottom: 1rem;
       font-weight: 700;
+      color: #222;
     }
 
     p {
       font-size: 1.1rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       color: #444;
+      white-space: pre-line; /* para respetar saltos de línea */
     }
 
     .foto {
@@ -111,10 +124,13 @@
   </header>
 
   <main>
-    <img src="foto-tuya.jpg" alt="Foto de William" class="foto" />
+    <img src="william foto.png" alt="Foto de William" class="foto" />
     <h1>Sobre mí</h1>
-    <p>Hola, soy William, arquitecto apasionado por el diseño minimalista y la innovación. Me especializo en crear espacios funcionales y estéticos que combinan forma y función.</p>
-    <p>Aquí podrás conocer más sobre mis proyectos, habilidades y cómo contactarme.</p>
+    <p>
+      Graduate in Architecture, Urbanism, and Territory from Universidad San Ignacio de Loyola in Lima, Perú. With over seven years of experience in project development, technical office work, and construction supervision. Skilled in budgeting and post-sale coordination with suppliers and clients.<br><br>
+      I am a proactive person with a passion for design. I have a strong ability to adapt to different environments and work under pressure.<br><br>
+      My goal is to expand my experience in product design to create effective solutions.
+    </p>
   </main>
 
   <footer>

@@ -1,39 +1,296 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <title>Inicio - William Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Portafolio William C.</title>
+<style>
+  /* Reset y base */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  /* Menu superior */
+  nav {
+    background-color: #2d2d2d;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+  nav button {
+    background: #444;
+    color: #eee;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    letter-spacing: 1px;
+  }
+  nav button:hover, nav button.active {
+    background-color: #777;
+    color: #fff;
+  }
+  main {
+    max-width: 960px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    flex-grow: 1;
+  }
+  section {
+    display: none;
+    animation: fadeIn 0.6s ease forwards;
+  }
+  section.active {
+    display: block;
+  }
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  /* INICIO */
+  #inicio img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 25px auto;
+    object-fit: cover;
+    box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  }
+  #inicio h1 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #333;
+  }
+  #inicio p {
+    max-width: 700px;
+    margin: 0 auto 15px auto;
+    line-height: 1.6;
+    font-size: 1.05rem;
+    color: #555;
+    text-align: center;
+  }
+  /* PROYECTOS */
+  #proyectos h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333;
+  }
+  .galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 25px;
+  }
+  .proyecto {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  .proyecto img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+    transition: filter 0.3s ease;
+  }
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0; right: 0;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    padding: 15px;
+    font-size: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+  }
+  .proyecto:hover img {
+    filter: brightness(0.6);
+  }
+  .proyecto:hover .overlay {
+    opacity: 1;
+  }
+  /* CONTACTO */
+  #contacto h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333;
+  }
+  form {
+    max-width: 480px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  label {
+    font-weight: 600;
+    color: #444;
+  }
+  input, textarea {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1.8px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+    resize: vertical;
+  }
+  input:focus, textarea:focus {
+    border-color: #888;
+    outline: none;
+  }
+  button.submit-btn {
+    background-color: #444;
+    color: #eee;
+    border: none;
+    padding: 15px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button.submit-btn:hover {
+    background-color: #666;
+  }
+  footer {
+    text-align: center;
+    padding: 15px 10px;
+    font-size: 0.9rem;
+    color: #888;
+  }
+  /* Responsive */
+  @media (max-width: 600px) {
+    nav {
+      flex-direction: column;
+      gap: 10px;
+      padding: 15px 0;
+    }
+    nav button {
+      padding: 12px 20px;
+      font-size: 1rem;
+    }
+  }
+</style>
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="proyectos.html">Proyectos</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <section id="sobre-mi" class="inicio">
-      <img src="william foto.png" alt="Foto de William" class="foto-perfil" />
-      <h1>William C.</h1>
-      <p>
-        Graduate in Architecture, Urbanism, and Territory from Universidad San Ignacio de Loyola in Lima, Perú. With over seven years of experience in project development, technical office work, and construction supervision. Skilled in budgeting and post-sale coordination with suppliers and clients.
-      </p>
-      <p>
-        I am a proactive person with a passion for design. I have a strong ability to adapt to different environments and work under pressure.
-      </p>
-      <p>
-        My goal is to expand my experience in product design to create effective solutions.
-      </p>
-    </section>
-  </main>
+<nav>
+  <button class="nav-btn active" data-target="inicio">Inicio</button>
+  <button class="nav-btn" data-target="proyectos">Proyectos</button>
+  <button class="nav-btn" data-target="contacto">Contacto</button>
+</nav>
 
-  <footer>
-    <p>© 2025 William C.</p>
-  </footer>
+<main>
+  <section id="inicio" class="active">
+    <img src="william foto.png" alt="Foto de William" />
+    <h1>William C.</h1>
+    <p>
+      Graduate in Architecture, Urbanism, and Territory from Universidad San Ignacio de Loyola in Lima, Perú. With over seven years of experience in project development, technical office work, and construction supervision. Skilled in budgeting and post-sale coordination with suppliers and clients.
+    </p>
+    <p>
+      I am a proactive person with a passion for design. I have a strong ability to adapt to different environments and work under pressure.
+    </p>
+    <p>
+      My goal is to expand my experience in product design to create effective solutions.
+    </p>
+  </section>
+
+  <section id="proyectos">
+    <h2>Mis Proyectos</h2>
+    <div class="galeria">
+      <div class="proyecto">
+        <img src="proyecto1.jpg" alt="Proyecto 1" />
+        <div class="overlay">Proyecto 1: Diseño arquitectónico minimalista.</div>
+      </div>
+      <div class="proyecto">
+        <img src="proyecto2.jpg" alt="Proyecto 2" />
+        <div class="overlay">Proyecto 2: Desarrollo urbano sostenible.</div>
+      </div>
+      <div class="proyecto">
+        <img src="proyecto3.jpg" alt="Proyecto 3" />
+        <div class="overlay">Proyecto 3: Intervención de espacios públicos.</div>
+      </div>
+      <div class="proyecto">
+        <img src="proyecto4.jpg" alt="Proyecto 4" />
+        <div class="overlay">Proyecto 4: Diseño de interiores contemporáneo.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <form id="formulario">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+      <button type="submit" class="submit-btn">Enviar</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 William C.</p>
+</footer>
+
+<script>
+  // Navegación dinámicamente mostrar secciones
+  const buttons = document.querySelectorAll('nav button.nav-btn');
+  const sections = document.querySelectorAll('main section');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Quitar active de todos botones
+      buttons.forEach(btn => btn.classList.remove('active'));
+      // Añadir active al clicado
+      button.classList.add('active');
+
+      // Ocultar todas las secciones
+      sections.forEach(sec => sec.classList.remove('active'));
+
+      // Mostrar la sección correspondiente
+      const target = button.getAttribute('data-target');
+      document.getElementById(target).classList.add('active');
+    });
+  });
+
+  // Formulario simple sin backend solo para demostración
+  document.getElementById('formulario').addEventListener('submit', e => {
+    e.preventDefault();
+    alert('Gracias por contactarme, responderé pronto!');
+    e.target.reset();
+  });
+</script>
+
 </body>
 </html>
